@@ -77,6 +77,11 @@ const browserLanguage = navigator.language.toLowerCase();
 const currentLanguage = browserLanguage.startsWith("es") ? "es" : "en";
 // const currentLanguage = "es";
 
+/*
+ * Set the HTML language.
+ */
+document.documentElement.lang = currentLanguage;
+
 const T = translations[currentLanguage];
 
 /*
@@ -121,7 +126,10 @@ async function loadServerData(){
     }
 
     const data = await response.json();
-    const rules = currentLanguage === "es" ? data.rules_es : data.rules;
+    // const rules = currentLanguage === "es" ? data.rules_es : data.rules;
+    const rules = (currentLanguage === "es")
+      ? (data.rules_es ? data.rules_es : data.rules)
+      : (data.rules ? data.rules : null);
 
     /*
      * Server is online.
@@ -223,7 +231,16 @@ async function loadServerData(){
      * Last update time.
      */
     const updatedDate = new Date(data.updated);
-    document .getElementById("updatedTime").textContent = T.serverDataUpdated + updatedDate.toLocaleString();
+
+    const year = updatedDate.getFullYear();
+    const month = String(updatedDate.getMonth() + 1).padStart(2, "0");
+    const day = String(updatedDate.getDate()).padStart(2, "0");
+    const hours = String(updatedDate.getHours()).padStart(2, "0");
+    const minutes = String(updatedDate.getMinutes()).padStart(2, "0");
+
+    const formattedDate = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+
+    document .getElementById("updatedTime").textContent = T.serverDataUpdated + formattedDate;
   }catch(error){
     /*
      * Server appears offline or unreachable.
