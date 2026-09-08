@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just-Craft Adventure | Official Server</title>
+    <title id="pageTitle">Just-Craft Adventure | Official Server</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -17,7 +17,7 @@
     ========================================================= -->
     <header>
       <img src="logo.jpg" alt="Just-Craft Logo" class="main-logo">
-      <h1>JUST-CRAFT ADVENTURE SERVER</h1>
+      <h1 id="serverTitle">JUST-CRAFT ADVENTURE SERVER</h1>
     </header>
 
     <div class="container">
@@ -28,17 +28,17 @@
         <div class="discord-info">
           <img src="LOGO_DISCORD.png" alt="Discord" class="discord-logo">
           <div>
-            <div style="font-weight: bold;">Official Community</div>
-            <div style="font-size: 0.8rem; opacity: 0.7;">Join our Discord!</div>
+            <div style="font-weight: bold;" id="officialCommunity">Official Community</div>
+            <div style="font-size: 0.8rem; opacity: 0.7;" id="joinDiscord">Join our Discord!</div>
           </div>
         </div>
-        <a href="https://discord.gg/gKH3BFcMK" target="_blank" class="btn-join">JOIN</a>
+        <a href="https://discord.gg/gKH3BFcMK" target="_blank" class="btn-join" id="joinLink">JOIN</a>
       </div>
       <!-- =====================================================
          LIVE SERVER STATUS
       ====================================================== -->
       <div class="server-card">
-        <h2>LIVE SERVER STATUS</h2>
+        <h2 id="liveServerStatus">LIVE SERVER STATUS</h2>
         <div class="status-banner">
           <div id="statusDot" class="status-dot"></div>
           <span id="serverStatus">Checking server...</span>
@@ -48,23 +48,23 @@
         <div class="stats-grid">
           <div class="stat-box">
             <span class="stat-number" id="onlinePlayers">-</span>
-            <span class="stat-label">PLAYERS ONLINE</span>
+            <span class="stat-label" id="playersOnlineLabel">PLAYERS ONLINE</span>
           </div>
           <div class="stat-box">
             <span class="stat-number" id="totalModCount">-</span>
-            <span class="stat-label">TOTAL NUMBER OF MODS</span>
+            <span class="stat-label" id="totalModsLabel">TOTAL NUMBER OF MODS</span>
           </div>
           <div class="stat-box">
             <!-- <span class="stat-number" id="luantiVersion" style="font-size: 0.9rem;">-</span> -->
             <span class="stat-number" id="luantiVersion">-</span>
-            <span class="stat-label">LUANTI VERSION</span>
+            <span class="stat-label" id="luantiVersionLabel">LUANTI VERSION</span>
           </div>
         </div>
 
 
         <!-- Online players -->
         <div class="players-section">
-          <h3>ONLINE PLAYERS</h3>
+          <h3 id="onlinePlayersTitle">ONLINE PLAYERS</h3>
           <div id="playerList" class="player-list">
             <span class="no-players">Checking players...</span>
           </div>
@@ -73,29 +73,29 @@
 
         <!-- Places -->
         <div class="places-section">
-          <h3>SERVER PLACES</h3>
+          <h3 id="serverPlacesTitle">SERVER PLACES</h3>
           <div id="placesList" class="places-grid"></div>
         </div>
-        <!-- Updated -->
-        <div class="updated-time" id="updatedTime">Waiting for server information...</div>
       </div>
 
       <!-- =====================================================
          SERVER RULES
       ====================================================== -->
       <div class="rules-container">
-        <h2>SERVER RULES</h2>
-
+        <h2 id="serverRulesTitle">SERVER RULES</h2>
         <div class="rules-list" id="rulesList">
-          <div class="no-players">Loading server rules...</div>
+          <div class="no-players" id="loadingRules">Loading server rules...</div>
         </div>
       </div>
     </div>
 
+    <!-- Last Updated -->
+    <div class="updated-time" id="updatedTime">Waiting for server information...</div>
+
     <!-- =========================================================
        FOOTER
     ========================================================= -->
-    <footer>&copy; 2026 Just-Craft Adventure.<br><br>Powered by Luanti.</footer>
+    <footer>&copy; 2026 Just-Craft Adventure.<br><br><span id="footerPowered">Powered by Luanti.</span></footer>
 
     <!-- =========================================================
        JAVASCRIPT
