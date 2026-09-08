@@ -1,201 +1,105 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just-Craft Adventure | Official Server</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --mc-green: #55ff55;
-            --mc-blue: #5555ff;
-            --discord-color: #5865F2;
-            --text-color: #e0e0e0;
-        }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* --- HEADER & LOGO --- */
-        header {
-            width: 100%;
-            padding: 40px 20px;
-            text-align: center;
-            background: linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(30,30,30,1) 100%);
-        }
-
-        .main-logo {
-            width: 250px; /* Ajustá según tu imagen de Just-Craft */
-            height: auto;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-        }
-
-        h1 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.2rem;
-            color: var(--mc-green);
-            margin-top: 20px;
-        }
-
-        /* --- CONTENEDOR PRINCIPAL --- */
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin-bottom: 50px;
-        }
-
-        /* --- DISCORD SECTION --- */
-        .discord-card {
-            background-color: #2c2f33;
-            border-radius: 15px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            border-left: 5px solid var(--discord-color);
-        }
-
-        .discord-info { display: flex; align-items: center; gap: 15px; }
-        .discord-logo { width: 50px; border-radius: 50%; }
-
-        .btn-join {
-            background-color: var(--discord-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-        .btn-join:hover { background-color: #4752c4; transform: scale(1.05); }
-
-        /* --- RULES SECTION --- */
-        .rules-container {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid #333;
-        }
-
-        .rules-container h2 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1rem;
-            color: #ffaa00;
-            text-align: center;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-
-        .rules-list {
-            height: 400px;
-            overflow-y: scroll;
-            padding-right: 15px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Scrollbar fachera */
-        .rules-list::-webkit-scrollbar { width: 8px; }
-        .rules-list::-webkit-scrollbar-track { background: #121212; }
-        .rules-list::-webkit-scrollbar-thumb { background: #444; border-radius: 10px; }
-
-        .rule-item {
-            margin-bottom: 12px;
-            padding: 10px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 5px;
-        }
-
-        .rule-number { color: var(--mc-green); font-weight: bold; margin-right: 8px; }
-
-        footer {
-            margin: 40px 0;
-            font-size: 0.7rem;
-            opacity: 0.5;
-            text-align: center;
-        }
     </style>
-</head>
-<body>
+  </head>
 
-<header>
-    <img src="OIG1.jpeg" alt="Just-Craft Logo" class="main-logo">
-    <h1>ADVENTURE SERVER</h1>
-</header>
+  <body>
+    <!-- =========================================================
+       HEADER
+    ========================================================= -->
+    <header>
+      <img src="logo.jpg" alt="Just-Craft Logo" class="main-logo">
+      <h1>JUST-CRAFT ADVENTURE SERVER</h1>
+    </header>
 
-<div class="container">
-    
-    <div class="discord-card">
+    <div class="container">
+      <!-- =====================================================
+         DISCORD
+      ====================================================== -->
+      <div class="discord-card">
         <div class="discord-info">
-            <img src="LOGO_DISCORD.png" alt="Discord" class="discord-logo">
-            <div>
-                <div style="font-weight: bold;">Comunidad Oficial</div>
-                <div style="font-size: 0.8rem; opacity: 0.7;">¡Unite al Discord!</div>
-            </div>
+          <img src="LOGO_DISCORD.png" alt="Discord" class="discord-logo">
+          <div>
+            <div style="font-weight: bold;">Official Community</div>
+            <div style="font-size: 0.8rem; opacity: 0.7;">Join our Discord!</div>
+          </div>
         </div>
-        <a href="https://discord.gg/gKH3BFcMK" target="_blank" class="btn-join">UNIRSE</a>
-    </div>
+        <a href="https://discord.gg/gKH3BFcMK" target="_blank" class="btn-join">JOIN</a>
+      </div>
+      <!-- =====================================================
+         LIVE SERVER STATUS
+      ====================================================== -->
+      <div class="server-card">
+        <h2>LIVE SERVER STATUS</h2>
+        <div class="status-banner">
+          <div id="statusDot" class="status-dot"></div>
+          <span id="serverStatus">Checking server...</span>
+        </div>
 
-    <div class="rules-container">
+        <!-- Server statistics -->
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-number" id="onlinePlayers">-</span>
+            <span class="stat-label">PLAYERS ONLINE</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number" id="totalModCount">-</span>
+            <span class="stat-label">TOTAL NUMBER OF MODS</span>
+          </div>
+          <div class="stat-box">
+            <!-- <span class="stat-number" id="luantiVersion" style="font-size: 0.9rem;">-</span> -->
+            <span class="stat-number" id="luantiVersion">-</span>
+            <span class="stat-label">LUANTI VERSION</span>
+          </div>
+        </div>
+
+
+        <!-- Online players -->
+        <div class="players-section">
+          <h3>ONLINE PLAYERS</h3>
+          <div id="playerList" class="player-list">
+            <span class="no-players">Checking players...</span>
+          </div>
+        </div>
+
+
+        <!-- Places -->
+        <div class="places-section">
+          <h3>SERVER PLACES</h3>
+          <div id="placesList" class="places-grid"></div>
+        </div>
+        <!-- Updated -->
+        <div class="updated-time" id="updatedTime">Waiting for server information...</div>
+      </div>
+
+      <!-- =====================================================
+         SERVER RULES
+      ====================================================== -->
+      <div class="rules-container">
         <h2>SERVER RULES</h2>
-        <div class="rules-list">
-            <div class="rule-item"><span class="rule-number">1)</span> Do NOT steal from other players.</div>
-            <div class="rule-item"><span class="rule-number">2)</span> Do NOT place lava or water on other players' areas.</div>
-            <div class="rule-item"><span class="rule-number">3)</span> Do NOT build on someone else's claimed area.</div>
-            <div class="rule-item"><span class="rule-number">4)</span> Do NOT steal protected areas or land.</div>
-            <div class="rule-item"><span class="rule-number">5)</span> Do NOT use modified or hacked clients.</div>
-            <div class="rule-item"><span class="rule-number">6)</span> No insults, swearing, or offensive language.</div>
-            <div class="rule-item"><span class="rule-number">7)</span> Do NOT advertise other servers.</div>
-            <div class="rule-item"><span class="rule-number">8)</span> Respect all players, especially Moderators and Staff.</div>
-            <div class="rule-item"><span class="rule-number">9)</span> Do NOT ask for privileges or ranks.</div>
-            <div class="rule-item"><span class="rule-number">10)</span> Moderator and Staff ranks are given officially.</div>
-            <div class="rule-item"><span class="rule-number">11)</span> Do NOT place lava or water at spawn.</div>
-            <div class="rule-item"><span class="rule-number">12)</span> Dating or looking for relationships is forbidden.</div>
-            <div class="rule-item"><span class="rule-number">13)</span> Do NOT provoke fights or arguments.</div>
-            <div class="rule-item"><span class="rule-number">14)</span> Do NOT harass or annoy other players.</div>
-            <div class="rule-item"><span class="rule-number">15)</span> Do NOT spam in chat.</div>
-            <div class="rule-item"><span class="rule-number">16)</span> Do NOT write everything in ALL CAPS.</div>
-            <div class="rule-item"><span class="rule-number">17)</span> Do NOT spread false information.</div>
-            <div class="rule-item"><span class="rule-number">18)</span> Do NOT build inappropriate structures.</div>
-            <div class="rule-item"><span class="rule-number">19)</span> Do NOT destroy abandoned constructions without permission.</div>
-            <div class="rule-item"><span class="rule-number">20)</span> Do NOT make unfair traps.</div>
-            <div class="rule-item"><span class="rule-number">21)</span> Do NOT create lag machines.</div>
-            <div class="rule-item"><span class="rule-number">22)</span> Keep spawn and claimed areas tidy.</div>
-            <div class="rule-item"><span class="rule-number">23)</span> Do NOT exploit server bugs.</div>
-            <div class="rule-item"><span class="rule-number">24)</span> Do NOT duplicate items.</div>
-            <div class="rule-item"><span class="rule-number">25)</span> Report bugs to Staff.</div>
-            <div class="rule-item"><span class="rule-number">26)</span> Do NOT scam other players.</div>
-            <div class="rule-item"><span class="rule-number">27)</span> Owner decisions are final.</div>
-            <div class="rule-item"><span class="rule-number">28)</span> Do NOT argue against punishments in public chat.</div>
-            <div class="rule-item"><span class="rule-number">29)</span> Report Staff issues to the Owner.</div>
-            <div class="rule-item"><span class="rule-number">30)</span> Impersonating Staff is punished.</div>
-            <div class="rule-item"><span class="rule-number">31)</span> Do NOT share your account.</div>
-            <div class="rule-item"><span class="rule-number">32)</span> Do NOT ask for others' passwords.</div>
-            <div class="rule-item"><span class="rule-number">33)</span> Each player is responsible for their account.</div>
-            <div class="rule-item"><span class="rule-number">34)</span> Keep a friendly and safe environment.</div>
-            <div class="rule-item"><span class="rule-number">35)</span> Do NOT post +18 or inappropriate content.</div>
-            <div class="rule-item"><span class="rule-number">36)</span> Romantic roleplay is forbidden.</div>
+
+        <div class="rules-list" id="rulesList">
+          <div class="no-players">Loading server rules...</div>
         </div>
+      </div>
     </div>
 
-</div>
+    <!-- =========================================================
+       FOOTER
+    ========================================================= -->
+    <footer>&copy; 2026 Just-Craft Adventure.<br><br>Powered by Luanti.</footer>
 
-<footer>
-    &copy; 2026 Just-Craft Adventure. Not an official Minecraft product.
-</footer>
-
-</body>
-                </html>
+    <!-- =========================================================
+       JAVASCRIPT
+    ========================================================= -->
+    <script src="script.js"></script>
+  </body>
+</html>
