@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">Just-Craft Adventure | Official Server</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
 
     </style>
@@ -16,24 +16,44 @@
        HEADER
     ========================================================= -->
     <header>
-      <img src="logo.jpg" alt="Just-Craft Logo" class="main-logo">
+      <img src="images/logo.jpg" alt="Just-Craft Logo" class="main-logo">
       <h1 id="serverTitle">JUST-CRAFT ADVENTURE SERVER</h1>
     </header>
 
     <div class="container">
       <!-- =====================================================
-         DISCORD
+         COMMUNITY CARDS
       ====================================================== -->
-      <div class="discord-card">
-        <div class="discord-info">
-          <img src="LOGO_DISCORD.png" alt="Discord" class="discord-logo">
-          <div>
-            <div style="font-weight: bold;" id="officialCommunity">Official Community</div>
-            <div style="font-size: 0.8rem; opacity: 0.7;" id="joinDiscord">Join our Discord!</div>
+      <div class="community-cards">
+        <!-- =====================================================
+           DISCORD
+        ====================================================== -->
+        <div class="discord-card">
+          <div class="discord-info">
+            <img src="images/LOGO_DISCORD.png" alt="Discord" class="discord-logo">
+            <div>
+              <div style="font-weight: bold;" id="officialCommunity">Official Community</div>
+              <div style="font-size: 0.8rem; opacity: 0.7;" id="joinDiscord">Join our Discord!</div>
+            </div>
           </div>
+          <a href="https://discord.gg/gKH3BFcMK" target="_blank" class="btn-join" id="joinLink">JOIN</a>
         </div>
-        <a href="https://discord.gg/gKH3BFcMK" target="_blank" class="btn-join" id="joinLink">JOIN</a>
+
+        <!-- =====================================================
+           LUANTI FORUM
+        ====================================================== -->
+        <div class="forum-card">
+          <div class="forum-info">
+            <img src="images/LOGO_LUANTI.png" alt="Luanti" class="luanti-logo">
+            <div>
+              <div style="font-weight: bold;" id="officialForum">Luanti Forum</div>
+              <div style="font-size: 0.8rem; opacity: 0.7;" id="visitForum">Just-Craft Forum Post</div>
+            </div>
+          </div>
+          <a href="https://forum.luanti.org/viewtopic.php?t=32339" target="_blank" class="btn-forum" id="visitLink">VISIT</a>
+        </div>
       </div>
+
       <!-- =====================================================
          LIVE SERVER STATUS
       ====================================================== -->
@@ -100,6 +120,6 @@
     <!-- =========================================================
        JAVASCRIPT
     ========================================================= -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

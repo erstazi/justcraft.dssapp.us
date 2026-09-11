@@ -19,6 +19,9 @@ const translations = {
     officialCommunity: "Official Community",
     joinDiscord: "Join our Discord!",
     joinLink: "JOIN",
+    officialForum: "Luanti Forum",
+    visitForum: "Just-Craft Forum Post",
+    visitLink: "VISIT",
     liveServerStatus: "LIVE SERVER STATUS",
     checkingServer: "Checking server...",
     serverOnline: "SERVER ONLINE",
@@ -34,7 +37,6 @@ const translations = {
     serverRulesTitle: "SERVER RULES",
     noRules: "No server rules are currently available.",
     couldNotContact: "Could not contact the server.",
-    serverStatusUnavailable: "SERVER STATUS UNAVAILABLE",
     serverDataUpdated: "Server data updated: ",
     footerPowered: "Powered by Luanti."
   },
@@ -45,6 +47,9 @@ const translations = {
     officialCommunity: "Comunidad Oficial",
     joinDiscord: "¡Únete a nuestro Discord!",
     joinLink: "UNIRSE",
+    officialForum: "Foro de Luanti",
+    visitForum: "Publicación del foro de Just-Craft",
+    visitLink: "VISITAR",
     liveServerStatus: "ESTADO DEL SERVIDOR EN VIVO",
     checkingServer: "Comprobando servidor...",
     serverOnline: "SERVIDOR EN LÍNEA",
@@ -60,7 +65,6 @@ const translations = {
     loadingRules: "Cargando las reglas del servidor...",
     noRules: "No hay reglas del servidor disponibles actualmente.",
     couldNotContact: "No se pudo contactar con el servidor.",
-    serverStatusUnavailable: "ESTADO DEL SERVIDOR NO DISPONIBLE",
     serverDataUpdated: "Datos del servidor actualizados: ",
     footerPowered: "Desarrollado con Luanti."
   }
@@ -91,9 +95,14 @@ function applyTranslations(){
   document.title = T.pageTitle;
 
   document.getElementById("serverTitle").textContent = T.serverTitle;
+
   document.getElementById("officialCommunity").textContent = T.officialCommunity;
   document.getElementById("joinDiscord").textContent = T.joinDiscord;
   document.getElementById("joinLink").textContent = T.joinLink;
+
+  document.getElementById("officialForum").textContent = T.officialForum;
+  document.getElementById("visitForum").textContent = T.visitForum;
+  document.getElementById("visitLink").textContent = T.visitLink;
 
   document.getElementById("liveServerStatus").textContent = T.liveServerStatus;
 
