@@ -262,16 +262,59 @@ async function loadServerData(){
 }
 
 /*
+ * Check if server data has been modified.
+ */
+let serverJsonLastModified = null;
+
+async function checkServerData(){
+  try{
+    const response = await fetch(
+      SERVER_JSON_URL + "?t=" + Date.now(),
+      {
+        method: "HEAD",
+        cache: "no-store"
+      }
+    );
+
+    if(!response.ok){
+      throw new Error("HTTP error: " + response.status);
+    }
+
+    const lastModified = response.headers.get("Last-Modified");
+
+    /*
+     * First check: load the data.
+     */
+    if(serverJsonLastModified === null){
+      serverJsonLastModified = lastModified;
+      await loadServerData();
+      return;
+    }
+
+    /*
+     * Only download the JSON if the file changed.
+     */
+    if(lastModified !== serverJsonLastModified){
+      serverJsonLastModified = lastModified;
+      await loadServerData();
+    }
+
+  }catch(error){
+    console.error("Could not check server data:", error);
+  }
+}
+
+/*
  * Apply translations.
  */
 applyTranslations();
 
 /*
- * Load immediately.
+ * Run check if Server Data is modified otherwise load immediately
  */
-loadServerData();
+checkServerData();
 
 /*
- * Refresh every 60 seconds.
+ * Refresh every 10 seconds if modified.
  */
-setInterval(loadServerData, 60000);
+setInterval(checkServerData, 10000);
